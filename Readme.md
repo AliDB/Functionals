@@ -1,6 +1,6 @@
 
-Functionals
-===========
+#Functionals (Functions of Functions)
+
 
 In this tutorial, we are going to show how funcionals (functions of functions) can be used in our programming. For that reason we have implemented diff function. This tutorial was part of my project for Statistical Computing course with Prof. Harner.
 
@@ -8,7 +8,7 @@ Newton's method for finding a root of a differentiable function *f* takes a gues
 $$ y - \\frac{f(y)}{Df(y)}$$
  where *D**f* denotes the derivative of *f*.
 
-1.  Create a function called `newton_search` with four arguments: `f`, `df`, `guess`, `conv` (the convergence criterion).
+#### 1.  Create a function called `newton_search` with four arguments: `f`, `df`, `guess`, `conv` (the convergence criterion).
 
 ``` r
 newton_search <- function(f, df, guess, conv=0.001) {
@@ -37,20 +37,19 @@ newton_search <- function(f, df, guess, conv=0.001) {
 
 Hint: Define a local functions (or helper function) to compute the improvement and then test for convengence.
 
-1.  Use this function to find the root of *s**i**n*(*x*) near 3 using the actual symbolic derivative. The exact answer is *π*.
+#### 1.  Use this function to find the root of *s**i**n*(*x*) near 3 using the actual symbolic derivative. The exact answer is *π*.
 
 ``` r
-# Put your R code here.
 newton_search(sin,cos,3,.001)
 ```
 
     ## [1] 3.142547
 
-1.  In general you may not be able to compute the derivative exactly. Use the symmetric difference quotient to approxiate the derivative of *f* at *x* numerically by the defintion:
+#### 1.  In general you may not be able to compute the derivative exactly. Use the symmetric difference quotient to approxiate the derivative of *f* at *x* numerically by the defintion:
     $$ Df \\approx \\frac{f(x + h) - f(x - h)}{2h} $$
      for small *h*.
 
-Define a function `make_derivative` with arguments `f` and `h`. The result returned should be a function closure that remembers both `f` and `h`.
+#### efine a function `make_derivative` with arguments `f` and `h`. The result returned should be a function closure that remembers both `f` and `h`.
 
 ``` r
 make_derivative <- function(f, h) {
@@ -63,7 +62,7 @@ make_derivative <- function(f, h) {
 }
 ```
 
-1.  Find the root of *s**i**n*(*x*) near 3 using numerical derivatives.
+#### 1.  Find the root of *s**i**n*(*x*) near 3 using numerical derivatives.
 
 ``` r
 # Put your R code here.
@@ -74,7 +73,7 @@ root <- 3 - sin(3) / rootSine(3) ; root
 
     ## [1] 3.142547
 
-1.  The log-likelihood of the gamma distribution with scale parameter 1 can be written as:
+#### 1.  The log-likelihood of the gamma distribution with scale parameter 1 can be written as:
     (*α* − 1)*s* − *n*log*Γ*(*α*)
      where *α* is the shape parameter and *s* = ∑log*X*<sub>*i*</sub> is the sufficient statistic.
 
