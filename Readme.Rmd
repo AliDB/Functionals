@@ -13,7 +13,7 @@ In this tutorial, we are going to show how funcionals (functions of functions) c
 
 
 Newton's method for finding a root of a differentiable function $f$ takes a guess $y$ and computes hopfully an improved guess as:
-$$ y - \frac{f(y)}{Df(y)}$$
+$y - \frac{f(y)}{Df(y)}$
 where $Df$ denotes the derivative of $f$.
 
 1. Create a function called `newton_search` with four arguments: `f`, `df`, `guess`, `conv` (the convergence criterion).
