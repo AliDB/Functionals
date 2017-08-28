@@ -1,4 +1,4 @@
-#Functionals (Functions of Functions)
+# Functionals (Functions of Functions)
 
 In this tutorial, we are going to show how funcionals (functions of functions) can be used in our programming. For that reason we have implemented diff function. This tutorial was part of my project for Statistical Computing course with Prof. Harner.
 
