@@ -5,14 +5,16 @@
 In this tutorial, we are going to show how funcionals (functions of functions) can be used in our programming. For that reason we have implemented diff function. This tutorial was part of my project for Statistical Computing course with Prof. Harner.
 
 Newton's method for finding a root of a differentiable function *f* takes a guess *y* and computes hopfully an improved guess as:
-$$ y - \\frac{f(y)}{Df(y)}$$
- where *D**f* denotes the derivative of *f*.
+
+$$y -\frac{f(y)}{Df(y)}$$
+
+ where *Df* denotes the derivative of *f*.
+ 
 
 #### 1.  Create a function called `newton_search` with four arguments: `f`, `df`, `guess`, `conv` (the convergence criterion).
 
 ``` r
 newton_search <- function(f, df, guess, conv=0.001) {
-# Put your function body here.
   # f= sin;df= cos; guess=3.2; conv=.00001
   
   makeNewGuess <- function(guess){
@@ -29,11 +31,12 @@ newton_search <- function(f, df, guess, conv=0.001) {
   guess
 }
 
-## There are different types of stopping criterion. 
-#1) when $x_{n+1}$ - $x_n$ is sufficiently small. 
-#2) when $\abs(F(x_n))$ sufficiently small in some sense for some  $x_{n}$
-# I chose the first one here. I assumed that our function has simple format.
 ```
+There are different types of stopping criterion. 
+1) when  $x_{n+1}$ - $x_n$ is sufficiently small. 
+2) when  $|F(x_n)|$  sufficiently small in some sense for some  $x_{n}$
+I chose the first one here. I assumed that our function has simple format.
+
 
 Hint: Define a local functions (or helper function) to compute the improvement and then test for convengence.
 
@@ -53,7 +56,6 @@ newton_search(sin,cos,3,.001)
 
 ``` r
 make_derivative <- function(f, h) {
-    # Put your function body here.
   make_derivative_closure <<- function(x){
     df <- (  (f(x+h)-f(x-h)) / (2*h) )
     df  
@@ -108,8 +110,5 @@ newton_search(df1,df2,guess,conv=.001)
 
     ## [1] 4.569934
 
-``` r
-# Put more R code here.
-```
 
 Hint: You must apply `newton_search` to the first and second derivatives (derived numerically using `make_derivative`) of the log-likelihood. Your answer should be near 4.5.
